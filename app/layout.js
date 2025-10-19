@@ -6,6 +6,7 @@ import { FloatingShapes } from "@/components/floating-shapes";
 import Header from "@/components/header";
 import { ConvexClientProvider } from "./ConvexClientProvider";
 import { ClerkProvider } from "@clerk/nextjs";
+import { dark, shadesOfPurple } from "@clerk/themes";
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata = {
@@ -25,7 +26,11 @@ export default function RootLayout({ children }) {
           enableSystem
           disableTransitionOnChange
         >
-          <ClerkProvider>
+          <ClerkProvider appearance={
+            {
+              baseTheme: shadesOfPurple
+            }
+          }>
             <ConvexClientProvider>
               {/*Header*/}
               <Header />

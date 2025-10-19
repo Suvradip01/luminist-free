@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
 import { SignedIn, SignedOut, SignInButton, SignUpButton, UserButton } from "@clerk/nextjs";
+import { Button } from "./ui/button";
 
 
 export default function Header() {
@@ -56,15 +57,25 @@ export default function Header() {
 
                 <div className="flex items-center gap-3 ml-10 md:ml-20">
                     <SignedOut>
-                        <SignInButton />
+                        <SignInButton>
+                            <Button variant="glass" className="hidden sm:flex">Sign In</Button>
+                        </SignInButton>
                         <SignUpButton>
-                            <button className="bg-[#6c47ff] text-ceramic-white rounded-full font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 cursor-pointer">
-                                Sign Up
-                            </button>
+                            <Button variant="primary">Get Started</Button>
                         </SignUpButton>
                     </SignedOut>
                     <SignedIn>
-                        <UserButton />
+                        <UserButton
+                            appearance={{
+                                elements: {
+                                    avatarBox: "w-8 h-8 rounded-lg border border-white/20",
+                                    userButtonPopoverCard:
+                                        "shadow-xl backdrop-blur-md bg-slate-900/90 border border-white/20",
+                                    userPreviewMainIdentifier: "font-semibold text-white",
+                                },
+                            }}
+                            afterSignOutUrl="/"
+                        />
                     </SignedIn>
                 </div>
             </div>
