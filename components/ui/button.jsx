@@ -22,6 +22,7 @@ const buttonVariants = cva(
 
         //custom designed buttons
         primary: "backdrop-blur-lg bg-gradient-to-r from-orange-400 via-red-500 to-pink-600 text-white border-transparent hover:shadow-2xl hover:shadow-blue-500/25 hover:transform hover:scale-105",
+        tertiary: "backdrop-blur-lg bg-white/10 text-amber-500 transition-all duration-300 ease-in-out hover:bg-white/20 hover:scale-105 px-6 py-2.5 rounded-full border-2 border-white",
         glass: "backdrop-blur-lg bg-white/10 text-white border border-white/20 transition-all duration-300 ease-in-out hover:bg-white/20 hover:transform hover:scale-105",
       },
       size: {
