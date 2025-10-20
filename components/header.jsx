@@ -9,6 +9,7 @@ import { Button } from "./ui/button";
 import { useStoreUser } from "./hooks/use-store-users";
 import { BarLoader } from "react-spinners";
 import { Authenticated, Unauthenticated } from "convex/react";
+import { LayoutDashboard } from "lucide-react";
 
 
 export default function Header() {
@@ -59,16 +60,16 @@ export default function Header() {
                     </div>
                 )}
 
+                {/* Auth Actions */}
                 <div className="flex items-center gap-3 ml-10 md:ml-20">
-                    <Unauthenticated>
-                        <SignInButton>
-                            <Button variant="glass" className="hidden sm:flex">Sign In</Button>
-                        </SignInButton>
-                        <SignUpButton>
-                            <Button variant="primary">Get Started</Button>
-                        </SignUpButton>
-                    </Unauthenticated>
                     <Authenticated>
+                        <Link href="/dashboard">
+                            <Button variant="glass" className="hidden sm:flex">
+                                <LayoutDashboard className="h-4 w-4" />
+                                <span className="hidden md:flex">Dashboard</span>
+                            </Button>
+                        </Link>
+
                         <UserButton
                             appearance={{
                                 elements: {
@@ -81,6 +82,18 @@ export default function Header() {
                             afterSignOutUrl="/"
                         />
                     </Authenticated>
+
+                    <Unauthenticated>
+                        <SignInButton>
+                            <Button variant="glass" className="hidden sm:flex">
+                                Sign In
+                            </Button>
+                        </SignInButton>
+
+                        <SignUpButton>
+                            <Button variant="primary">Get Started</Button>
+                        </SignUpButton>
+                    </Unauthenticated>
                 </div>
                 {isLoading && (
                     <div className="fixed bottom-0 left-0 w-full z-40 flex justify-center">
