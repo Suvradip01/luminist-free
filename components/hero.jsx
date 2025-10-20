@@ -3,6 +3,8 @@
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { Button } from "./ui/button";
+import { FlipWords } from "./AnimatedText";
+import { TypingText } from "./TypingText";
 
 const HeroSection = () => {
     const [textVisible, setTextVisible] = useState(false);
@@ -25,14 +27,18 @@ const HeroSection = () => {
                             Create
                         </span>
                         <br />
-                        <span className="text-white">Without Limits</span>
+                        <FlipWords
+                            words={["Limitless", "Epic", "Iconic"]}
+                            className="text-white text-7xl font-bold"
+                        />
+
                     </h1>
 
-                    <p className="text-xl text-gray-400 mb-8 max-w-3xl mx-auto leading-relaxed">
-                        Professional image editing powered by AI. Crop, resize, adjust
-                        colors, remove backgrounds, and enhance your images with
-                        cutting-edge technology.
-                    </p>
+                    <TypingText
+                        text="Effortlessly edit & enhance your photos with smart AI tools for flawless results."
+                        className="text-xl text-gray-400 mb-8 max-w-3xl mx-auto leading-relaxed"
+                    />
+
 
                     <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-12">
                         <Link href="/dashboard">

@@ -5,51 +5,6 @@ import useIntersectionObserver from './hooks/use-Intersection-Observer';
 import { Button } from './ui/button';
 import { toast } from 'sonner';
 
-// const PricingCard = ({
-//     id,
-//     plan,
-//     price,
-//     features,
-//     featured = false,
-//     planId,
-//     buttonText,
-// }) => {
-//     const [ref, isVisible] = useIntersectionObserver();
-//     const [isHovered, setIsHovered] = useState(false);
-//     const { has } = useAuth();
-
-//     // Check if user has this specific plan
-//     const isCurrentPlan = id ? has?.({ plan: id }) : false;
-
-
-//     return (
-//         <section className="py-20" id="pricing">
-//             <div className="max-w-6xl mx-auto px-6">
-//                 <div className="text-center mb-16">
-//                     <h2 className="text-5xl font-bold mb-6">
-//                         Simple {" "}
-//                         <span className="bg-gradient-to-r from-orange-400 via-pink-600 to-orange-400 bg-clip-text text-transparent">
-//                             Pricing
-//                         </span>
-//                     </h2>
-//                     <p className="text-xl text-gray-300 mb-8">
-//                         Join thousands of creators who are already using AI to transform
-//                         their images and bring their vision to life.
-//                     </p>
-//                 </div>
-//                 <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-//                     {plans.map((plan, index) => (
-//                         <PricingCard key={index} {...plan} />
-//                     ))}
-//                 </div>
-//             </div>
-//         </section>
-
-//     )
-// }
-
-// export default Pricing;
-
 const PricingCard = ({
     id,
     plan,
