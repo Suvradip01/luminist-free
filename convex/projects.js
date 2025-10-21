@@ -1,7 +1,7 @@
 import { v } from "convex/values";
 import { mutation, query } from "./_generated/server";
 import { internal } from "./_generated/api";
-// Removed: import { useAuth } from '@clerk/nextjs'; <-- This is a client-side import
+
 export const create = mutation({
     args: {
         title: v.string(),
@@ -28,7 +28,7 @@ export const create = mutation({
             }
         }
 
-        const projectId = await ctx.db.insert("projects", {
+        const project = await ctx.db.insert("projects", {
             title: args.title,
             userId: user._id,
             originalImageUrl: args.originalImageUrl,
@@ -43,14 +43,13 @@ export const create = mutation({
 
         // Update user's project count
         await ctx.db.patch(user._id, {
-            projectsUsed: (user.projectsUsed || 0) + 1, // Added fallback for projectsUsed
+            projectsUsed: (user.projectsUsed || 0) + 1,
             lastActiveAt: Date.now(),
         });
 
-        return projectId;
+        return project._id; // Fixed: return actual project ID
     },
 });
-
 
 export const getUserProjects = query({
     handler: async (ctx) => {
@@ -65,7 +64,6 @@ export const getUserProjects = query({
         return projects;
     },
 });
-
 
 export const deleteProject = mutation({
     args: { projectId: v.id("projects") },
@@ -84,7 +82,7 @@ export const deleteProject = mutation({
         await ctx.db.delete(args.projectId);
 
         await ctx.db.patch(user._id, {
-            projectsUsed: Math.max(0, (user.projectsUsed || 1) - 1), // Added fallback for projectsUsed
+            projectsUsed: Math.max(0, (user.projectsUsed || 0) - 1),
             lastActiveAt: Date.now(),
         });
 
