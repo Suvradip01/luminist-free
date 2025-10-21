@@ -33,7 +33,7 @@ const Dashboard = () => {
                 {isLoading ? (
                     <BarLoader width={"100%"} color="white" />
                 ) : projects && projects.length > 0 ? (
-                    <>/</>
+                    <></>
                 ) : (
                     <div className="flex flex-col items-center justify-center py-20 text-center">
                         <h3 className="text-2xl font-semibold text-white mb-3">

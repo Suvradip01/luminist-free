@@ -28,7 +28,7 @@ export const create = mutation({
             }
         }
 
-        const project = await ctx.db.insert("projects", {
+        const projectId = await ctx.db.insert("projects", {
             title: args.title,
             userId: user._id,
             originalImageUrl: args.originalImageUrl,
@@ -47,7 +47,8 @@ export const create = mutation({
             lastActiveAt: Date.now(),
         });
 
-        return project._id; // Fixed: return actual project ID
+        // FIX: return an object with _id
+        return { _id: projectId };
     },
 });
 
