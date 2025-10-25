@@ -126,19 +126,19 @@ const FeaturesSection = () => {
             icon: Crop,
             title: "Smart Crop & Resize",
             description:
-                "Interactive cropping with aspect ratio constraints and intelligent resizing that preserves image quality across any dimension.",
+                "Interactive cropping with precise aspect ratio control and intelligent resizing that keeps your images sharp at any size",
         },
         {
             icon: Paintbrush,
             title: "Color & Light Adjustment",
             description:
-                "Professional-grade brightness, contrast, saturation controls with real-time preview and auto-enhance capabilities.",
+                "Adjust brightness, contrast, and saturation like a pro, with real-time previews and intelligent auto-enhance.",
         },
         {
             icon: Eraser,
             title: "AI Background Removal",
             description:
-                "Remove or replace backgrounds instantly using advanced AI that detects complex edges and fine details with precision.",
+                "Instantly remove or replace backgrounds with AI that accurately detects even the finest edges and details.",
         },
         {
             icon: Wand2,
@@ -150,13 +150,13 @@ const FeaturesSection = () => {
             icon: Maximize2,
             title: "Image Extender",
             description:
-                "Expand your canvas in any direction with AI-powered generative fill that seamlessly blends new content with existing images.",
+                "Expand your canvas in any direction with AI-driven generative fill that blends new content seamlessly into your images.",
         },
         {
             icon: Scaling,
             title: "AI Upscaler",
             description:
-                "Enhance image resolution up to 4x using AI upscaling technology that preserves details and reduces artifacts.",
+                "Upscale images up to 4× with AI technology that preserves details and minimizes artifacts.",
         },
     ];
 
@@ -165,11 +165,10 @@ const FeaturesSection = () => {
             <div className="max-w-7xl mx-auto px-6">
                 <div className="text-center mb-16">
                     <h2 className="text-5xl font-bold bg-gradient-to-r from-orange-400 via-pink-600 to-orange-400 bg-clip-text text-transparent mb-6">
-                        Powerful AI Features
+                        Smart AI Features
                     </h2>
                     <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                        Everything you need to create, edit, and enhance images with
-                        professional-grade tools powered by cutting-edge AI technology.
+                        Everything you need to craft stunning images — powered by cutting-edge AI.
                     </p>
                 </div>
 

@@ -156,7 +156,7 @@ const NewProjectModal = ({ isOpen, onClose }) => {
                                 <Crown className="h-5 w-5 text-amber-400" />
                                 <AlertDescription className="text-amber-300/80">
                                     <div className="font-semibold text-amber-400 mb-1">
-                                        Project Limit Reached
+                                        Oops! Project Limit Reached
                                     </div>
                                     Free plan is limited to {PROJECT_LIMIT} projects. Upgrade to Luminist Pro to create more projects.
                                 </AlertDescription>

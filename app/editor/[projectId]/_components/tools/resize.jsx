@@ -171,7 +171,7 @@ const ResizeControls = ({ project }) => {
                         variant="ghost"
                         size="sm"
                         onClick={() => setLockAspectRatio(!lockAspectRatio)}
-                        className="text-white/70 hover:text-white p-1"
+                        className="text-white hover:text-white p-1"
                     >
                         {lockAspectRatio ? (
                             <Lock className="h-4 w-4" />
@@ -183,7 +183,7 @@ const ResizeControls = ({ project }) => {
 
                 <div className="grid grid-cols-2 gap-3">
                     <div>
-                        <label className="text-xs text-white/70 mb-1 block">Width</label>
+                        <label className="text-xs text-white mb-1 block">Width</label>
                         <Input
                             type="number"
                             value={newWidth}
@@ -194,7 +194,7 @@ const ResizeControls = ({ project }) => {
                         />
                     </div>
                     <div>
-                        <label className="text-xs text-white/70 mb-1 block">Height</label>
+                        <label className="text-xs text-white mb-1 block">Height</label>
                         <Input
                             type="number"
                             value={newHeight}
@@ -230,8 +230,8 @@ const ResizeControls = ({ project }) => {
                                 size="sm"
                                 onClick={() => applyAspectRatio(aspectRatio)}
                                 className={`justify-between h-auto py-2 ${selectedPreset === aspectRatio.name
-                                    ? "bg-cyan-500 hover:bg-cyan-600"
-                                    : "text-left"
+                                        ? "bg-white text-black hover:bg-gray-100"
+                                        : "text-left"
                                     }`}
                             >
                                 <div>
@@ -258,7 +258,7 @@ const ResizeControls = ({ project }) => {
                         <div>
                             New Canvas: {newWidth} × {newHeight} pixels
                         </div>
-                        <div className="text-cyan-400">
+                        <div className="text-pink-400">
                             {newWidth > project.width || newHeight > project.height
                                 ? "Canvas will be expanded"
                                 : "Canvas will be cropped"}

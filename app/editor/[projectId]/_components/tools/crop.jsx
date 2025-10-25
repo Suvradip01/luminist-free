@@ -314,11 +314,12 @@ export function CropContent() {
         <div className="space-y-6">
             {/* Crop Mode Status */}
             {isCropMode && (
-                <div className="bg-cyan-500/10 border border-cyan-500/20 rounded-lg p-3">
-                    <p className="text-cyan-400 text-sm font-medium">
-                        ✂️ Crop Mode Active
-                    </p>
-                    <p className="text-cyan-300/80 text-xs mt-1">
+                <div className="bg-cyan-500/10 border border-white rounded-lg p-3">
+                    <span className="flex items-center gap-1">
+                        <Crop className="h-4 w-4" />
+                            Crop Mode Active
+                    </span>
+                    <p className="text-pink-400 text-xs mt-1">
                         Adjust the blue rectangle to set crop area
                     </p>
                 </div>
@@ -350,7 +351,7 @@ export function CropContent() {
                                     key={ratio.label}
                                     onClick={() => applyAspectRatio(ratio.value)}
                                     className={`text-center p-3 border rounded-lg transition-colors cursor-pointer ${selectedRatio === ratio.value
-                                        ? "border-cyan-400 bg-cyan-400/10"
+                                        ? "border-white bg-cyan-800/10"
                                         : "border-white/20 hover:border-white/40 hover:bg-white/5"
                                         }`}
                                 >

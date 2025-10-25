@@ -559,7 +559,7 @@ export function EditorTopBar({ project }) {
                                     size="sm"
                                     onClick={() => handleToolChange(tool.id)}
                                     className={`gap-2 relative ${isActive
-                                        ? "bg-blue-600 text-white hover:bg-blue-700"
+                                        ? "bg-white text-black hover:bg-gray-100"
                                         : "text-white hover:text-gray-300 hover:bg-gray-100"
                                         } ${!hasToolAccess ? "opacity-60" : ""}`}
                                 >

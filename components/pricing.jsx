@@ -137,14 +137,13 @@ const Pricing = () => {
             <div className="max-w-6xl mx-auto px-6">
                 <div className="text-center mb-16">
                     <h2 className="text-5xl font-bold mb-6">
-                        Simple {" "}
+                        Plans {" "}
                         <span className="bg-gradient-to-r from-orange-400 via-pink-600 to-orange-400 bg-clip-text text-transparent">
-                            Pricing
+                            That Fit
                         </span>
                     </h2>
                     <p className="text-xl text-gray-300 mb-8">
-                        Join thousands of creators who are already using AI to transform
-                        their images and bring their vision to life.
+                        Join the growing community using AI to craft stunning, professional-grade images.
                     </p>
                 </div>
 

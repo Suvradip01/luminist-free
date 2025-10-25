@@ -190,29 +190,32 @@ const AIEdit = ({ project }) => {
               <div
                 key={preset.key}
                 className={`relative p-4 rounded-lg border cursor-pointer transition-all ${isSelected
-                  ? "border-cyan-400 bg-cyan-400/10"
-                  : "border-white/20 bg-slate-700/30 hover:border-white/40"
+                    ? "border-black bg-white"
+                    : "border-white/20 bg-slate-700/30 hover:border-white/40"
                   }`}
                 onClick={() => setSelectedPreset(preset.key)}
               >
                 <div className="flex flex-col items-center text-center">
-                  <Icon className="h-8 w-8 text-cyan-400 mb-2" />
+                  <Icon className={`h-8 w-8 mb-2 ${isSelected ? "text-black" : "text-pink-600"}`} />
                   <div className="flex items-center gap-2 mb-1">
-                    <h4 className="text-white font-medium text-sm">
+                    <h4 className={`font-medium text-sm ${isSelected ? "text-black" : "text-white"}`}>
                       {preset.label}
                     </h4>
                     {preset.recommended && (
-                      <span className="px-1.5 py-0.5 bg-cyan-500 text-white text-xs rounded-full">
+                      <span className={`px-1.5 py-0.5 text-xs rounded-full ${isSelected ? "bg-black text-white" : "bg-orange-500 text-white"
+                        }`}>
                         ★
                       </span>
                     )}
                   </div>
-                  <p className="text-white/70 text-xs">{preset.description}</p>
+                  <p className={`text-xs ${isSelected ? "text-black/70" : "text-white/70"}`}>
+                    {preset.description}
+                  </p>
                 </div>
 
                 {isSelected && (
                   <div className="absolute top-2 right-2">
-                    <div className="w-3 h-3 bg-cyan-400 rounded-full"></div>
+                    <div className="w-3 h-3 bg-black rounded-full"></div>
                   </div>
                 )}
               </div>

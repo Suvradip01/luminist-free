@@ -9,7 +9,7 @@ const convex = new ConvexReactClient(process.env.NEXT_PUBLIC_CONVEX_URL);
 export function ConvexClientProvider({ children }) {
     const { isLoaded } = useAuth();
 
-    // 🧠 Wait until Clerk finishes loading before rendering ConvexProvider
+    // Wait until Clerk finishes loading before rendering ConvexProvider
     if (!isLoaded) {
         return (
             <div className="flex h-screen items-center justify-center text-gray-500">

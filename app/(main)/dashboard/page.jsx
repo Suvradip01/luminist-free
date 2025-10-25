@@ -21,7 +21,7 @@ const Dashboard = () => {
                             Your Projects
                         </h1>
                         <p className="text-white/70">
-                            Create and manage your AI-powered image designs
+                            Effortlessly build and refine your designs with AI precision.
                         </p>
                     </div>
                     <Button
@@ -38,10 +38,10 @@ const Dashboard = () => {
                 ) : (
                     <div className="flex flex-col items-center justify-center py-20 text-center">
                         <h3 className="text-2xl font-semibold text-white mb-3">
-                            Create Your First Project
+                            Craft Your First Creation
                         </h3>
                         <p className="text-white/70 max-w-md mb-8">
-                            Upload an image to start editing with our powerful AI tools
+                            Your creativity starts here — upload your image and let AI do the magic.
                         </p>
 
                         {/* The button is now a child of the centered flex-col container */}
@@ -52,7 +52,7 @@ const Dashboard = () => {
                             className="gap-2"
                         >
                             <Sparkles className="h-5 w-5" />
-                            Start Creating
+                            Start Designing
                         </Button>
                     </div>
                 )}

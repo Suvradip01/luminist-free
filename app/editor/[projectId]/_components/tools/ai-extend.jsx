@@ -22,7 +22,7 @@ const FOCUS_MAP = {
   bottom: "fo-top",
 };
 
-const AIExtenderControls = ({project}) =>{
+const AIExtenderControls = ({ project }) => {
   const { canvasEditor, setProcessingMessage } = useCanvas();
   const [selectedDirection, setSelectedDirection] = useState(null);
   const [extensionAmount, setExtensionAmount] = useState(200);
@@ -186,9 +186,8 @@ const AIExtenderControls = ({project}) =>{
               key={key}
               onClick={() => selectDirection(key)}
               variant={selectedDirection === key ? "default" : "outline"}
-              className={`flex items-center gap-2 ${
-                selectedDirection === key ? "bg-cyan-500 hover:bg-cyan-600" : ""
-              }`}
+              className={`flex items-center gap-2 ${selectedDirection === key ? "bg-white text-black hover:bg-gray-100" : ""
+                }`}
             >
               <Icon className="h-4 w-4" />
               {label}
@@ -226,13 +225,13 @@ const AIExtenderControls = ({project}) =>{
               {Math.round(currentImage.width * (currentImage.scaleX || 1))} ×{" "}
               {Math.round(currentImage.height * (currentImage.scaleY || 1))}px
             </div>
-            <div className="text-cyan-400">
+            <div className="text-pink-500">
               Extended: {newWidth} × {newHeight}px
             </div>
             <div className="text-white/50">
               Canvas: {project.width} × {project.height}px (unchanged)
             </div>
-            <div className="text-cyan-300">
+            <div className="text-pink-500">
               Direction:{" "}
               {DIRECTIONS.find((d) => d.key === selectedDirection)?.label}
             </div>
