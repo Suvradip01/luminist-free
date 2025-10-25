@@ -1,8 +1,6 @@
 import FeaturesSection from "@/components/features";
 import HeroSection from "@/components/hero";
 import Pricing from "@/components/pricing";
-import { Button } from "@/components/ui/button"
-import Link from "next/link";
 
 export default function Home() {
   const stats = [
@@ -38,26 +36,6 @@ export default function Home() {
       <FeaturesSection />
 
       <Pricing />
-
-      <section className="py-20 text-center">
-        <div className="max-w-4xl mx-auto px-6">
-          <h2 className="text-5xl font-bold mb-6">
-            Ready to {" "}
-            <span className="bg-gradient-to-r from-orange-400 via-pink-600 to-orange-400 bg-clip-text text-transparent">
-              Create
-            </span>
-          </h2>
-          <p className="text-xl text-gray-300 mb-8">
-            Join thousands of creators who are already using AI to transform
-            their images and bring their vision to life.
-          </p>
-          <Link href="/dashboard">
-            <Button variant="primary" size="xl">
-              <span role="img" aria-label="sparkles">✨</span> Start Creating Now
-            </Button>
-          </Link>
-        </div>
-      </section>
     </div>
   );
 }

@@ -127,7 +127,7 @@ const Pricing = () => {
                 "AI Background Remover",
             ],
             featured: true,
-            planId: "cplan_34KgchZaxcL9JRPCgtWv6aMXIAw",
+            planId: "cplan_34Xsqx2DYKOeRVvt3w79f3UCSCS",
             buttonText: "Upgrade to Pro",
         },
     ];
