@@ -161,14 +161,14 @@ const AIEdit = ({ project }) => {
     <div className="space-y-6">
       {/* Status Indicator */}
       {hasActiveTransformations && (
-        <div className="bg-green-500/10 border border-green-500/20 rounded-lg p-4">
+        <div className="bg-blue-600/20 border border-blue-600/20 rounded-lg p-4">
           <div className="flex items-start gap-3">
-            <CheckCircle className="h-5 w-5 text-green-400 mt-0.5 flex-shrink-0" />
+            <CheckCircle className="h-5 w-5 text-blue-400 mt-0.5 flex-shrink-0" />
             <div>
-              <h3 className="text-green-400 font-medium mb-1">
+              <h3 className="text-blue-400 font-medium mb-1">
                 Image Enhanced
               </h3>
-              <p className="text-green-300/80 text-sm">
+              <p className="text-blue-300/80 text-sm">
                 AI enhancements have been applied to this image
               </p>
             </div>
@@ -190,8 +190,8 @@ const AIEdit = ({ project }) => {
               <div
                 key={preset.key}
                 className={`relative p-4 rounded-lg border cursor-pointer transition-all ${isSelected
-                    ? "border-black bg-white"
-                    : "border-white/20 bg-slate-700/30 hover:border-white/40"
+                  ? "border-black bg-white"
+                  : "border-white/20 bg-slate-700/30 hover:border-white/40"
                   }`}
                 onClick={() => setSelectedPreset(preset.key)}
               >
