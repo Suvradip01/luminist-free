@@ -6,7 +6,7 @@ import React from "react";
 import CropContent from "./tools/crop";
 
 
-import BackgroundControls from "./tools/background-controls";
+import BackgroundControls from "./tools/ai-background";
 import AIExtenderControls from "./tools/ai-extend";
 import AIEdit from "./tools/ai-edit";
 import { AdjustControls } from "./tools/adjust";
