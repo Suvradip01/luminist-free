@@ -1,17 +1,17 @@
 "use client";
 
 import { useCanvas } from "@/context/context";
-import { Crop, Expand, Eye, Maximize2, Palette, Sliders, Text } from "lucide-react";
+import { Crop, Expand, Eye, Maximize2, Palette, Sliders, Text, FlipHorizontal, Wand2, Sparkles } from "lucide-react";
 import React from "react";
 import CropContent from "./tools/crop";
-
-
 import BackgroundControls from "./tools/ai-background";
 import AIExtenderControls from "./tools/ai-extend";
 import AIEdit from "./tools/ai-edit";
 import { AdjustControls } from "./tools/adjust";
 import { TextControls } from "./tools/text";
 import ResizeControls from "./tools/resize";
+import { FlipControls } from "./tools/flip";
+import { EditImageControls } from "./tools/edit-image";
 
 const TOOL_CONFIGS = {
     resize: {
@@ -24,10 +24,25 @@ const TOOL_CONFIGS = {
         icon: Crop,
         description: "Crop and trim your image",
     },
+    flip: {
+        title: "Flip",
+        icon: FlipHorizontal,
+        description: "Flip image horizontally or vertically",
+    },
     adjust: {
         title: "Adjust",
         icon: Sliders,
         description: "Brightness, contrast, and more (Manual saving required)",
+    },
+    text: {
+        title: "Add Text",
+        icon: Text,
+        description: "Customize in Various Fonts",
+    },
+    edit_image: {
+        title: "Edit Image",
+        icon: Wand2,
+        description: "Modify image contents with AI prompts",
     },
     background: {
         title: "Background",
@@ -39,20 +54,14 @@ const TOOL_CONFIGS = {
         icon: Maximize2,
         description: "Extend image boundaries with AI",
     },
-    text: {
-        title: "Add Text",
-        icon: Text,
-        description: "Customize in Various Fonts",
-    },
     ai_edit: {
-        title: "AI Editing",
-        icon: Eye,
+        title: "AI Enhance",
+        icon: Sparkles,
         description: "Enhance image quality with AI",
     },
 };
 
 const EditorSidebar = ({ project }) => {
-
     const { activeTool } = useCanvas();
 
     const toolConfig = TOOL_CONFIGS[activeTool];
@@ -83,27 +92,30 @@ const EditorSidebar = ({ project }) => {
         </div>
     );
 
-
     function renderToolContent(activeTool, project) {
         switch (activeTool) {
             case "crop":
                 return <CropContent />;
             case "resize":
                 return <ResizeControls project={project} />;
+            case "flip":
+                return <FlipControls project={project} />;
             case "adjust":
                 return <AdjustControls />;
+            case "text":
+                return <TextControls />;
+            case "edit_image":
+                return <EditImageControls project={project} />;
             case "background":
                 return <BackgroundControls project={project} />;
             case "ai_extender":
                 return <AIExtenderControls project={project} />;
-            case "text":
-                return <TextControls />;
             case "ai_edit":
                 return <AIEdit project={project} />;
             default:
                 return <div className="text-white">Select a tool to get started</div>;
         }
     }
-}
+};
 
-export default EditorSidebar
+export default EditorSidebar;

@@ -12,6 +12,7 @@ export function usePlanAccess() {
         // Free plan tools
         resize: true,
         crop: true,
+        flip: true,
         adjust: true,
         text: true,
 
@@ -19,6 +20,7 @@ export function usePlanAccess() {
         background: isPro,
         ai_extender: isPro,
         ai_edit: isPro,
+        edit_image: isPro
     };
 
     // Helper function to check if user has access to a specific tool

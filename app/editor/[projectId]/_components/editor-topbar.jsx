@@ -19,6 +19,9 @@ import {
     Download,
     FileImage,
     Lock,
+    FlipHorizontal,
+    Wand2,
+    Sparkles,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -50,6 +53,11 @@ const TOOLS = [
         icon: Crop,
     },
     {
+        id: "flip",
+        label: "Flip",
+        icon: FlipHorizontal,
+    },
+    {
         id: "adjust",
         label: "Adjust",
         icon: Sliders,
@@ -58,6 +66,12 @@ const TOOLS = [
         id: "text",
         label: "Text",
         icon: Text,
+    },
+    {
+        id: "edit_image",
+        label: "Edit Image",
+        icon: Wand2,
+        proOnly: true,
     },
     {
         id: "background",
@@ -73,8 +87,8 @@ const TOOLS = [
     },
     {
         id: "ai_edit",
-        label: "AI Editing",
-        icon: Eye,
+        label: "AI Enhance",
+        icon: Sparkles,
         proOnly: true,
     },
 ];
