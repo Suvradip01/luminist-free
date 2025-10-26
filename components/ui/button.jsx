@@ -22,7 +22,23 @@ const buttonVariants = cva(
 
         //custom designed buttons
         primary: "backdrop-blur-lg bg-gradient-to-r from-orange-400 via-red-500 to-pink-600 text-white border-transparent hover:shadow-2xl hover:shadow-blue-500/25 hover:transform hover:scale-105",
-        tertiary: "backdrop-blur-lg bg-white/10 text-amber-500 transition-all duration-300 ease-in-out hover:bg-white/20 hover:scale-105 px-6 py-2.5 rounded-full border-2 border-white",
+        tertiary: `
+  relative inline-flex items-center justify-center
+  overflow-hidden
+  rounded-full border-2 border-white
+  bg-white/10 backdrop-blur-md
+  text-orange-400 font-semibold tracking-wide
+  px-6 py-2.5
+  transition-all duration-500 ease-out
+  hover:scale-[1.05] active:scale-[0.98]
+  hover:bg-white/20
+  hover:text-orange-300
+  shadow-[0_0_12px_rgba(255,255,255,0.15)]
+  before:absolute before:inset-0 before:bg-[linear-gradient(110deg,transparent,rgba(255,255,255,0.35),transparent)]
+  before:translate-x-[-100%] hover:before:translate-x-[100%]
+  before:transition-transform before:duration-[0.5s] before:ease-in-out
+`,
+
         glass: "backdrop-blur-lg bg-white/10 text-white border border-white/20 transition-all duration-300 ease-in-out hover:bg-white/20 hover:transform hover:scale-105",
       },
       size: {
