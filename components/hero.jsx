@@ -29,7 +29,7 @@ const HeroSection = () => {
                         </span>
                         <br />
                         <FlipWords
-                            words={["Limitless", "Epic", "Iconic"]}
+                            words={["Iconic", "Epic", "Limitless"]}
                             className="text-white text-7xl font-bold"
                         />
 

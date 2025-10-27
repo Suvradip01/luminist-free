@@ -20,11 +20,11 @@ export default function Header() {
     }
 
     return (
-        <header className="fixed top-6 left-1/2 transform -translate-x-1/2 z-50 text-nowrap">
+        <header className="fixed top-6 left-1/2 transform -translate-x-1/2 z-50 text-nowrap w-[50%] max-w-5xl">
             {/* Center - Glass Navigation Container */}
-            <div className="backdrop-blur-md bg-white/10 border border-white/20 rounded-full px-8 py-1 flex items-center justify-between gap-20">
+            <div className="backdrop-blur-md bg-white/10 border border-white/20 rounded-full px-8 py-1 flex items-center justify-between gap-8 w-full">
                 {/* Logo */}
-                <Link href="/" className="mr-10 md:mr-20">
+                <Link href="/" className="flex-shrink-0">
                     <Image
                         src="/logo.png"
                         alt="Pixxel Logo"
@@ -35,7 +35,7 @@ export default function Header() {
                 </Link>
 
                 {path === "/" && (
-                    <div className="hidden md:flex space-x-6">
+                    <div className="hidden md:flex space-x-8 flex-1 justify-center">
                         {[
                             { href: "#features", label: "Features" },
                             { href: "#pricing", label: "Pricing" },
@@ -59,7 +59,7 @@ export default function Header() {
                 )}
 
                 {/* Auth Actions */}
-                <div className="flex items-center gap-3 ml-10 md:ml-20">
+                <div className="flex items-center gap-3 flex-shrink-0">
                     <Authenticated>
                         <Link href="/dashboard">
                             <Button variant="glass" className="hidden sm:flex">
@@ -95,8 +95,10 @@ export default function Header() {
                 </div>
 
                 {isLoading && (
-                    <div className="fixed bottom-0 left-0 w-full z-40 flex justify-center">
-                        <BarLoader width={"89%"} color="#FF00FF" />
+                    <div className="fixed bottom-0 left-0 w-full z-40 flex justify-center pb-0">
+                        <div className="w-[89%] max-w-[89%]">
+                            <BarLoader width="100%" color="#FF00FF" />
+                        </div>
                     </div>
                 )}
             </div>
