@@ -38,7 +38,6 @@ import { api } from "@/convex/_generated/api";
 import { toast } from "sonner";
 import { useConvexMutation, useConvexQuery } from "@/components/hooks/use-convex-query";
 import { usePlanAccess } from "@/components/hooks/use-plan-access";
-import UpgradeModal from "@/components/upgrade-modal";
 
 const TOOLS = [
     {
@@ -124,8 +123,6 @@ export function EditorTopBar({ project }) {
     const router = useRouter();
     const [isExporting, setIsExporting] = useState(false);
     const [exportFormat, setExportFormat] = useState(null);
-    const [showUpgradeModal, setShowUpgradeModal] = useState(false);
-    const [restrictedTool, setRestrictedTool] = useState(null);
 
     // Undo/Redo state
     const [undoStack, setUndoStack] = useState([]);
@@ -264,8 +261,7 @@ export function EditorTopBar({ project }) {
     // Handle tool change with access control
     const handleToolChange = (toolId) => {
         if (!hasAccess(toolId)) {
-            setRestrictedTool(toolId);
-            setShowUpgradeModal(true);
+            toast.error("This feature requires a Pro plan");
             return;
         }
         onToolChange(toolId);
@@ -300,8 +296,7 @@ export function EditorTopBar({ project }) {
 
         // Check export limits for free users
         if (!canExport(user?.exportsThisMonth || 0)) {
-            setRestrictedTool("export");
-            setShowUpgradeModal(true);
+            toast.error("Free plan is limited to 20 exports per month. Upgrade to Pro for unlimited exports.");
             return;
         }
 
@@ -615,21 +610,6 @@ export function EditorTopBar({ project }) {
                     </div>
                 </div>
             </div>
-
-            {/* Upgrade Modal */}
-            <UpgradeModal
-                isOpen={showUpgradeModal}
-                onClose={() => {
-                    setShowUpgradeModal(false);
-                    setRestrictedTool(null);
-                }}
-                restrictedTool={restrictedTool}
-                reason={
-                    restrictedTool === "export"
-                        ? "Free plan is limited to 20 exports per month. Upgrade to Pro for unlimited exports."
-                        : undefined
-                }
-            />
         </>
     );
 }

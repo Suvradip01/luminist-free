@@ -1,6 +1,5 @@
 import FeaturesSection from "@/components/features";
 import HeroSection from "@/components/hero";
-import Pricing from "@/components/pricing";
 
 export default function Home() {
   const stats = [
@@ -34,8 +33,6 @@ export default function Home() {
       </section>
 
       <FeaturesSection />
-
-      <Pricing />
     </div>
   );
 }
